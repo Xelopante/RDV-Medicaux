@@ -19,7 +19,7 @@
     <script>
         //Vérification du cookie, si connecté alors redirection sur la carte.
         if (document.cookie.split(';').some((item) => item.trim().startsWith('token='))) {
-            window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/carte.html");
+            window.location.replace("../carte.html");
         }
     </script>
 
@@ -103,7 +103,7 @@
                     type: "PUT",
                     cache: false,
                     crossDomain: true,
-                    url : "http://172.19.0.36/PPE_RDV_MEDIC_JSON?action=patient",
+                    url : "../../PPE_RDV_MEDIC_JSON?action=patient",
                     dataType: "json",
 
                     //Sérialization des données.
@@ -120,7 +120,7 @@
                         dateExpiration.setMonth(dateExpiration.getMonth() + 13);
 
                         document.cookie = "token=" + data.token + "; expires=" + dateExpiration + "; path=/";
-                        window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/carte.html");
+                        window.location.replace("../carte.html");
                     },
                     error: function(data){
                         document.getElementById("erreur").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Login ou mot de passe incorrect</div>";

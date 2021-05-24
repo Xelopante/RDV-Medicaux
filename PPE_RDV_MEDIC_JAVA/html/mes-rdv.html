@@ -14,7 +14,7 @@
     <script>
         //Vérificaiton du cookie, si no connecté alors redirection sur la page de connexion.
         if ((document.cookie.split(';').some((item) => item.trim().startsWith('token='))) == false) {
-            window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/html/connexion.html");
+            window.location.replace("./connexion.html");
         }
     </script>
 
@@ -72,7 +72,7 @@
             type: "PUT",
             cache: false,
             crossDomain: true,
-            url: "http://172.19.0.36/PPE_RDV_MEDIC_JSON/?action=rdv",
+            url: "../../PPE_RDV_MEDIC_JSON/?action=rdv",
             dataType: "json",
 
             //Serialization du token et envoi.
@@ -164,7 +164,7 @@
                 type: "DELETE",
                 cache: false,
                 crossDomain: true,
-                url : "http://172.19.0.36/PPE_RDV_MEDIC_JSON?action=rdv",
+                url : "../../PPE_RDV_MEDIC_JSON?action=rdv",
                 dataType: "json",
 
                 data: JSON.stringify({
@@ -175,7 +175,7 @@
 
                 //Valide : suppression du cookie "token" et redirection vers la carte.
                 success: function(data){
-                    window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/html/mes-rdv.html");
+                    window.location.replace("./mes-rdv.html");
                 },
                 error: function(data){
                     console.log("erreur de suppression de rdv");
@@ -186,7 +186,7 @@
         function modifier(idRdv)
         {
             sessionStorage.setItem('idRdv', idRdv);
-            window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/html/modifier-rdv.html")
+            window.location.replace("./modifier-rdv.html")
         }
 
         //Fonction de déconnexion.
@@ -200,7 +200,7 @@
                 type: "DELETE",
                 cache: false,
                 crossDomain: true,
-                url : "http://172.19.0.36/PPE_RDV_MEDIC_JSON?action=patient",
+                url : "../../PPE_RDV_MEDIC_JSON?action=patient",
                 dataType: "json",
 
                 //Serialization du token et envoi.
@@ -212,7 +212,7 @@
                 //Valide : suppression du cookie "token" et redirection vers la carte.
                 success: function(data){
                     document.cookie = "token=;expires=Wed, 21 Oct 2015 07:28:00 GMT;path=/";
-                    window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/carte.html");
+                    window.location.replace("../carte.html");
                 },
                 error: function(data){
                     console.log("erreur de deconnexion");

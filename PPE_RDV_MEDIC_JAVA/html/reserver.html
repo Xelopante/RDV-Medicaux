@@ -14,7 +14,7 @@
     <script>
         //Vérificaiton du cookie, si no connecté alors redirection sur la page de connexion.
         if ((document.cookie.split(';').some((item) => item.trim().startsWith('token='))) == false) {
-            window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/html/connexion.html");
+            window.location.replace("./connexion.html");
         }
     </script>
 
@@ -100,7 +100,7 @@
                 type: "DELETE",
                 cache: false,
                 crossDomain: true,
-                url : "http://172.19.0.36/PPE_RDV_MEDIC_JSON?action=patient",
+                url : "../../PPE_RDV_MEDIC_JSON?action=patient",
                 dataType: "json",
 
                 //Sérialization des données.
@@ -112,7 +112,7 @@
                 //Valide : suppression du cookie "token" et redirection vers la carte.
                 success: function(data){
                     document.cookie = "token=;expires=Wed, 21 Oct 2015 07:28:00 GMT;path=/";
-                    window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/carte.html");
+                    window.location.replace("../carte.html");
                 },
                 error: function(data){
                     console.log("erreur de deconnexion");
@@ -143,7 +143,7 @@
                     type: "POST",
                     cache: false,
                     crossDomain: true,
-                    url: "http://172.19.0.36/PPE_RDV_MEDIC_JSON/index.php?action=rdv",
+                    url: "../../PPE_RDV_MEDIC_JSON/index.php?action=rdv",
                     dataType: "json",
 
                     //Sérialization des données.
@@ -155,7 +155,7 @@
 
                     //Valide : redirection sur la page des rendez-vous.
                     success: function(data){
-                        window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/html/mes-rdv.html");
+                        window.location.replace("./mes-rdv.html");
                     },
                     error: function(data){
                         console.log("rendez-vous impossible");

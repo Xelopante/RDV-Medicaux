@@ -20,7 +20,7 @@
     <script>
         //Vérification du cookie, si connecté alors redirection sur la carte.
         if (document.cookie.split(';').some((item) => item.trim().startsWith('token='))) {
-            window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/carte.html");
+            window.location.replace("../carte.html");
         }
     </script>
 
@@ -126,7 +126,7 @@
                     type: "POST",
                     cache: false,
                     crossDomain: true,
-                    url : "http://172.19.0.36/PPE_RDV_MEDIC_JSON/?action=patient",
+                    url : "../../PPE_RDV_MEDIC_JSON/?action=patient",
                     dataType: 'json',
 
                     //Serialization des données.
@@ -144,7 +144,7 @@
 
                     //Valide : redirection vers la page de connexion.
                     success: function(data){
-                        window.location.replace("http://172.19.0.36/PPE_RDV_MEDIC_JAVA/html/connexion.html");
+                        window.location.replace("./connexion.html");
                     },
                     error: function(data){
                         console.log("erreur d'inscription'");
