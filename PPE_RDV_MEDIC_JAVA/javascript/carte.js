@@ -22,7 +22,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
             if(data.records[nb].fields.specialite == "MEDECIN GENERALISTE"){
 
                 var marker = L.marker(data.records[nb].fields.geolocalisation).addTo(mymap);
-                marker.bindPopup("<p style =\"color: #3996B9\";>" + data.records[nb].fields.specialite + "</p>" + "</br></br>" + data.records[nb].fields.civilite + " " + data.records[nb].fields.nom + " "+ data.records[nb].fields.prenom + "</br></br>" + data.records[nb].fields.adresse + "</br></br>" + "<button type=\"submit\" OnClick=\" window.location.href ='http://172.19.0.36/PPE_RDV_MEDIC_JAVA/html/reserver.html?idMedecin=" + data.records[nb].recordid + "';\" class=\"btn btn-outline-primary boutton\">Prendre rendez-vous</button>");
+                marker.bindPopup("<p style =\"color: #3996B9\";>" + data.records[nb].fields.specialite + "</p>" + "</br></br>" + data.records[nb].fields.civilite + " " + data.records[nb].fields.nom + " "+ data.records[nb].fields.prenom + "</br></br>" + data.records[nb].fields.adresse + "</br></br>" + "<button type=\"submit\" OnClick=\" window.location.href ='./html/reserver.html?idMedecin=" + data.records[nb].recordid + "';\" class=\"btn btn-outline-primary boutton\">Prendre rendez-vous</button>");
             }
         }
     }

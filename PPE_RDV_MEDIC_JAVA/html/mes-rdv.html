@@ -113,6 +113,8 @@
                             }
                         });
 
+                        console.log(nomMedecin);
+
                         //VOIR BOUTON POUR MODIFIER / SUPPRIMER
                         rdv = "<tr><td class=\"text-center\">" + date + "</td><td class=\"text-center\">" + heure + "</td><td class=\"text-center\">" + nomMedecin + "</td><td class=\"text-center\"><button class=\"btn btn-outline-primary boutton\" id=\"modifier\" value=\"" + valeurRdv.idRdv + "\" onclick=\"modifier(" + valeurRdv.idRdv + ")\" >Modifier</button></td><td class=\"text-center\"><button class=\"btn btn-outline-primary boutton\" id=\"supprimer\" value=\"" + valeurRdv.idRdv + "\" onclick=\"supprimer(" + valeurRdv.idRdv + ")\" >Supprimer</button></td></tr>";
 
